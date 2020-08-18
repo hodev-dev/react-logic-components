@@ -1,30 +1,28 @@
 import React, { useState, useCallback } from 'react';
-import IF, { THEN, ELSE } from './Logics/IF';
+// import IF, { THEN, ELSE } from './Logics/IF';
+// import UNLESS from "./Logics/Unless";
+import FOREACH from './Logics/ForEach';
+
+
+
+const H1 = (props: any) => {
+  console.log({ props });
+  const { color } = props;
+  return (
+    <div>
+      <h1>{color}</h1>
+      <h2>test</h2>
+    </div>
+  )
+}
+
 function App() {
-
-  const [state, setState] = useState(false);
-  const [something] = useState(false);
-
-  const handleClick = useCallback(() => {
-    setState(true);
-  }, []);
 
   return (
     <div>
-      <IF variable={state} logic={'==='} check={true}>
-        <THEN>
-          <h1>{state.toString()}</h1>
-        </THEN>
-        <ELSE>
-          <h1>{state.toString()}</h1>
-        </ELSE>
-      </IF>
-      <IF variable={something} logic={'==='} check={true}>
-        <THEN>
-          <h1>{state.toString()}</h1>
-        </THEN>
-      </IF>
-      <button onClick={handleClick}>change State</button>
+      <FOREACH data={['red', 'blue', 'green']} as={"color"}>
+        <H1 />
+      </FOREACH>
     </div>
   );
 }

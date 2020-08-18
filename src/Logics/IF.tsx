@@ -38,6 +38,8 @@ const IF = (props: Props) => {
         switch (_logic) {
             case '===':
                 return _variable === _check;
+            case '!==':
+                return _variable !== _check;
             case '>':
                 return _variable > _check;
             case '>=':
