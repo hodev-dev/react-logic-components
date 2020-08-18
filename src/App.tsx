@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 // import IF, { THEN, ELSE } from './Logics/IF';
 // import UNLESS from "./Logics/Unless";
 import FOREACH from './Logics/ForEach';
+import IF, { THEN, ELSE } from './Logics/IF';
 
 
 
@@ -20,9 +21,16 @@ function App() {
 
   return (
     <div>
-      <FOREACH data={['red', 'blue', 'green']} as={"color"}>
-        <H1 />
-      </FOREACH>
+      <IF variable={true} logic="===" check={true}>
+        <THEN>
+          <FOREACH data={['red', 'blue', 'green']} as={"color"}>
+            <H1 color />
+          </FOREACH>
+        </THEN>
+        <ELSE>
+          not true
+        </ELSE>
+      </IF>
     </div>
   );
 }
