@@ -1,5 +1,7 @@
 # React Logic Components
 
+# install
+**no need to use npm** just copy `src/Logics` folder drop into react project because it has `Zero` dependecy
 ## IF Component
 render jsx if variable and check return `<THEN>` base on given logic otherwise return `<ELSE>`
 if there is no `<ELSE>` return null
