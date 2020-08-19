@@ -3,6 +3,7 @@ import React, { useState, useCallback } from 'react';
 // import UNLESS from "./Logics/Unless";
 import FOREACH from './Logics/ForEach';
 import IF, { THEN, ELSE } from './Logics/IF';
+import SWITCH, { CASE, DEFAULT } from './Logics/Switch';
 
 
 
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <IF variable={true} logic="===" check={true}>
+      {/* <IF variable={true} logic="===" check={true}>
         <THEN>
           <FOREACH data={['red', 'blue', 'green']} as={"color"}>
             <H1 color />
@@ -30,7 +31,12 @@ function App() {
         <ELSE>
           not true
         </ELSE>
-      </IF>
+      </IF> */}
+      <SWITCH variable={'hosein'}>
+        <CASE case="ali">render ali</CASE>
+        <CASE case="reza">render reza</CASE>
+        <DEFAULT>render if no casee found</DEFAULT>
+      </SWITCH>
     </div>
   );
 }
